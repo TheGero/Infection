@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RandomNumberGeneratorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-05-24T10:02:18" hostname="LAPTOP-EVBKM4V1" time="0.044">
-  <properties/>
-  <testcase name="valueFromRangeTest()" classname="RandomNumberGeneratorTest" time="0.038"/>
-  <testcase name="endBiggerThanStartFailureTest()" classname="RandomNumberGeneratorTest" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
