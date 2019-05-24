@@ -1,6 +1,6 @@
 public class Symptom {
     public int visibility;
-    Symptom(int visibility){
+    public Symptom(int visibility){
         this.visibility = visibility;
     }
 }
