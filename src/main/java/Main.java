@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Main {
-    private Simulation sim;
+    private Simulation simulation;
     private VirusData virusData;
     private int stepLimit;
     private int mapSize;
@@ -11,7 +11,9 @@ class Main {
     public static void main(String[] args){
         Main m = new Main();
         m.getDataFromUser();
-        //Simulation sim = new Simulation(mapSize, stepLimit, humanCount, doctorCount, virusData);
+        //Simulation simulation = new Simulation(mapSize, stepLimit, humanCount, doctorCount, virusData);
+        //simulation.run();
+        //simulation.writeResultsToFile();
     }
 
     private int getInt(String message, int validStart, int validEnd){
