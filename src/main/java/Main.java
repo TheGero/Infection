@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Main {
     private Simulation sim;
-    private VirusData vData;
+    private VirusData virusData;
     private int stepLimit;
     private int mapSize;
     private int humanCount;
@@ -43,7 +43,7 @@ class Main {
     }
 
     private void getDataFromUser(){
-        vData = new VirusData();
+        virusData = new VirusData();
 
         System.out.println("<welcome user>");
         System.out.println("Please input the simulation data. (type 'r 'to set random value instead)");
@@ -51,11 +51,11 @@ class Main {
         stepLimit = getInt("step limit <integer>: [1,2147483647]: ", 1, 2147483647);
         humanCount = getInt("Population <integer> [1,2147483647]: ", 1, 2147483647);
         doctorCount = getInt("Number of Doctors <integer> [1,2147483647]: ", 1, 2147483647);
-        vData.spreadChance = getInt("Virus's spread chance <integer> [0,100]: ", 0, 100);
-        vData.spreadRange = getInt("Virus's spread range <integer> [0,5]: ", 0, 5);
-        vData.mutationChance = getInt("Virus's mutation chance <integer> [0,100]: ", 0, 100);
-        vData.lethality = getInt("Virus's lethality <integer> [0,100]: ", 0, 100);
-        vData.resistanceToTreatment = getInt("Virus's resistance to treatment <integer> [0,100]: ", 0, 100);
+        virusData.spreadChance = getInt("Virus's spread chance <integer> [0,100]: ", 0, 100);
+        virusData.spreadRange = getInt("Virus's spread range <integer> [0,5]: ", 0, 5);
+        virusData.mutationChance = getInt("Virus's mutation chance <integer> [0,100]: ", 0, 100);
+        virusData.lethality = getInt("Virus's lethality <integer> [0,100]: ", 0, 100);
+        virusData.resistanceToTreatment = getInt("Virus's resistance to treatment <integer> [0,100]: ", 0, 100);
 
     }
 }
