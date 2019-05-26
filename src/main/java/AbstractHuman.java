@@ -1,22 +1,53 @@
-public class AbstractHuman implements IHuman
+public abstract class AbstractHuman implements IHuman
 {
     private boolean alive;
     private IVirus virus;
     private Map parentMap;
     private Coordinates coordinates;
 
-    public AbstractHuman(Map parentGrid){}
+    public AbstractHuman(Map parentMap) {
+        this.parentMap = parentMap;
+        alive = true;
+        virus = null;
+    }
 
-// boolean isAlive() {}
-// boolean isInfected() {}
-// boolean hasVisibleSymptoms() {}
-// void infect(IVirus virus) {}
-// void cure (){}
-// void kill (){}
-// Map getParentMap(){}
-// Coordinates getCoordinates(){}
-// IVirus getVirus(){}
-// void move(){}
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public boolean isInfected() {
+        return (virus != null);
+    }
+
+    public boolean hasVisibleSymptoms() {/*temporary TODO:Implement*/
+        return true;
+    }
+
+    public void infect(IVirus virus) {
+        this.virus = virus;
+    }
+
+    public void cure() {/*TODO:Implement*/}
+
+    public void kill() {/*TODO:Implement*/}
+
+    public Map getParentMap() {
+        return parentMap;
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public IVirus getVirus() {
+        return virus;
+    }
+
+    public void move() {/*TODO:Implement*/}
 
 
 }
