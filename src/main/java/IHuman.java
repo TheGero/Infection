@@ -1,2 +1,15 @@
-public interface IHuman {
+public interface IHuman
+{
+    //void update() {}
+   // boolean isAlive() {}
+   // boolean isInfected() {}
+   // boolean isDoctor() {}
+   // boolean hasVisibleSymptoms() {}
+    // void infect(IVirus virus) {}
+    // void cure (){}
+    // void kill (){}
+    // Map getParentMap(){}
+    // Coordinates getCoordinates(){}
+    // IVirus getVirus(){}
+
 }

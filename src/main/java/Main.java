@@ -48,7 +48,7 @@ class Main {
         virusData = new VirusData();
 
         System.out.println("<welcome user>");
-        System.out.println("Please input the simulation data. (type 'r 'to set random value instead)");
+        System.out.println("Please input the simulation data. (type 'r' to set random value instead)");
         mapSize = getInt("map size <integer> [0, 2147483647]: ", 1, 2147483647);
         stepLimit = getInt("step limit <integer>: [1,2147483647]: ", 1, 2147483647);
         humanCount = getInt("Population <integer> [1,2147483647]: ", 1, 2147483647);

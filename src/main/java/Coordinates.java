@@ -1,4 +1,5 @@
-public class Coordinates {
+public class Coordinates
+{
     protected int X;
     protected int Y;
 
