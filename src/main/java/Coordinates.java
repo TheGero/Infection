@@ -1,9 +1,11 @@
 public class Coordinates
 {
-    protected int X;
-    protected int Y;
+    private int X;
+    private int Y;
 
     public Coordinates(int X, int Y) {
+        this.X = X;
+        this.Y = Y;
     }
 
     public void setX(int X) {
