@@ -27,9 +27,13 @@ public abstract class AbstractHuman implements IHuman
         this.virus = virus;
     }
 
-    public void cure() {/*TODO:Implement*/}
+    public void cure() {
+        virus = null;
+    }
 
-    public void kill() {/*TODO:Implement*/}
+    public void kill() {
+        alive = false;
+    }
 
     public Map getParentMap() {
         return parentMap;

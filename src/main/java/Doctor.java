@@ -3,8 +3,10 @@ public class Doctor extends AbstractHuman {
         super(parentMap);
     }
 
+    @Override
     public void update() {/*TODO:Implement*/}
 
+    @Override
     public boolean isDoctor() {
         return true;
     }
