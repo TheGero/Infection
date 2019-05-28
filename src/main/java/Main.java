@@ -11,9 +11,7 @@ class Main {
     public static void main(String[] args){
         Main m = new Main();
         m.getDataFromUser();
-        //Simulation simulation = new Simulation(mapSize, stepLimit, humanCount, doctorCount, virusData);
-        //simulation.run();
-        //simulation.writeResultsToFile();
+        m.runSimulation();
     }
 
     private int getInt(String message, int validStart, int validEnd){
@@ -60,4 +58,11 @@ class Main {
         virusData.resistanceToTreatment = getInt("Virus's resistance to treatment <integer> [0,100]: ", 0, 100);
 
     }
+
+    private void runSimulation() {
+        Simulation simulation = new Simulation(mapSize, stepLimit, humanCount, doctorCount, virusData);
+        simulation.run();
+        simulation.writeResultsToFile();
+    }
+
 }

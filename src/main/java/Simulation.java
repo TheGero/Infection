@@ -16,7 +16,7 @@ public class Simulation {
     }
 
     public Simulation(int mapSize, int stepLimit, int humanCount, int doctorCount, VirusData virusData) {
-        //map = new Map(mapSize, humanCount, doctorCount, virusData);
+        map = new Map(mapSize, humanCount, doctorCount, virusData);
         this.stepLimit = stepLimit;
         stepCounter = 0;
 
@@ -36,16 +36,15 @@ public class Simulation {
     }
 
     private void step() {
-        //map.update();
+        map.update();
         stepCounter++;
     }
 
     private void logStep() {
-       /* humanCountArray[stepCounter-1] = map.getHumansLeft();
+        humanCountArray[stepCounter - 1] = map.getHumansLeft();
         doctorCountArray[stepCounter-1] = map.getDoctorsLeft();
         deadCountArray[stepCounter-1] = map.getInfectedLeft();
-        mutationCountArray[stepCounter-1] = map.getMutationCount();*/
-
+        mutationCountArray[stepCounter - 1] = map.getMutationCount();
     }
 
     public void writeResultsToFile() {

@@ -10,7 +10,7 @@ public class Map
     private List<IHuman> humans;
     private HumanCreator hCreator;
 
-    public Map(int size, int humanCount, int doctorCount) {
+    public Map(int size, int humanCount, int doctorCount, VirusData virusData) {
         this.size=size;
         humans = new ArrayList<>();
         hCreator = new HumanCreator();
@@ -31,7 +31,7 @@ public class Map
             h.setCoordinates(c);
             humans.add(h);
         }
-
+        startInfection(virusData);
     }
 
     public void update() {
