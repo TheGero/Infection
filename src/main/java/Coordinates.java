@@ -8,6 +8,10 @@ public class Coordinates
         this.Y = Y;
     }
 
+    public Coordinates() {
+        this(0, 0);
+    }
+
     public void setX(int X) {
         this.X = X;
     }

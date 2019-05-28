@@ -20,6 +20,8 @@ public interface IHuman
 
     Coordinates getCoordinates();
 
+    void setCoordinates(Coordinates coordinates);
+
     IVirus getVirus();
 
 }

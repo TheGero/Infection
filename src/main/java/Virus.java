@@ -10,6 +10,7 @@ public class Virus implements IVirus {
     }
 
     public void update() {/*TODO:Implement*/ }
+
     public VirusData getVirusData() { return data; }
 
     public int getSymptomsVisibility() {
