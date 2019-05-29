@@ -13,9 +13,10 @@ public class Human extends AbstractHuman {
         return false;
     }
 
-    private void flee() {
+    //returns true if found threat and ran away
+    private boolean flee() {
         if (isInfected())
-            return;
+            return false;
 
         List<IHuman> humansInRange = getParentMap().getHumansInRange(getCoordinates(), 2);
         for (IHuman h : humansInRange) {
@@ -50,9 +51,10 @@ public class Human extends AbstractHuman {
                     }
                 }
 
-                return;
+                return true;
             }
         }
+        return false;
     }
 
 }
