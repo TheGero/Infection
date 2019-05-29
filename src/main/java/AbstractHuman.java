@@ -60,7 +60,24 @@ public abstract class AbstractHuman implements IHuman {
         return virus;
     }
 
-    public void move() {/*TODO:Implement*/}
-
-
+    public void move() {
+        int direction = 0;
+        direction = RandomNumberGenerator.getIntegerFromRange(1,4);
+        // 1 = Moving Up
+        // 2 = Moving Down
+        // 3 = Moving Left
+        // 4 = Moving Right
+        if (direction == 1) {
+            coordinates.setY(coordinates.getY() + 1);
+        }
+        else if (direction == 2) {
+            coordinates.setY(coordinates.getY() - 1);
+        }
+        else if (direction == 3) {
+            coordinates.setX(coordinates.getX() - 1);
+        }
+        else if (direction == 4) {
+            coordinates.setX(coordinates.getX() + 1);
+        }
+    }
 }
