@@ -68,28 +68,34 @@ public abstract class AbstractHuman implements IHuman {
         return virus;
     }
 
-    public void move() {
-        int direction = RandomNumberGenerator.getIntegerFromRange(1,4);
-        int range = RandomNumberGenerator.getIntegerFromRange(1,2);
+    public void move(int direction, int range) {
         // 1 = Moving Up
         // 2 = Moving Down
         // 3 = Moving Left
         // 4 = Moving Right
         if (direction == 1) {
             coordinates.setY(coordinates.getY() + range);
-        }
-        else if (direction == 2) {
+        } else if (direction == 2) {
             coordinates.setY(coordinates.getY() - range);
-        }
-        else if (direction == 3) {
+        } else if (direction == 3) {
             coordinates.setX(coordinates.getX() - range);
-        }
-        else if (direction == 4) {
+        } else if (direction == 4) {
             coordinates.setX(coordinates.getX() + range);
         }
-        if (coordinates.getY()<0){coordinates.setY(0);}
-        else if (coordinates.getX()<0){coordinates.setX(0);}
-        else if (coordinates.getY()>parentMap.getSize()){coordinates.setY(parentMap.getSize());}
-        else if (coordinates.getX()>parentMap.getSize()){coordinates.setX(parentMap.getSize());}
+        if (coordinates.getY() < 0) {
+            coordinates.setY(0);
+        } else if (coordinates.getX() < 0) {
+            coordinates.setX(0);
+        } else if (coordinates.getY() > parentMap.getSize()) {
+            coordinates.setY(parentMap.getSize());
+        } else if (coordinates.getX() > parentMap.getSize()) {
+            coordinates.setX(parentMap.getSize());
+        }
+    }
+
+    public void move() {
+        int direction = RandomNumberGenerator.getIntegerFromRange(1,4);
+        int range = RandomNumberGenerator.getIntegerFromRange(1,2);
+        move(direction, range);
     }
 }
