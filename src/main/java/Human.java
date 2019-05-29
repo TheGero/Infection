@@ -10,7 +10,7 @@ public class Human extends AbstractHuman {
     {
         if (!isAlive()) return;
         if(!flee())
-        {move();}
+            move();
         if (isInfected())
             getVirus().update();
 
