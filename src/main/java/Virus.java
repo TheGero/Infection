@@ -28,7 +28,8 @@ public class Virus implements IVirus {
     }
 
     private void infect(IHuman human) {
-        /*TODO:Implement*/
+        Virus v = new Virus(human, data);
+        human.infect(v);
     }
 
     private void mutate() {/*TODO:Implement*/}
