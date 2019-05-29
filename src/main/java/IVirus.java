@@ -3,5 +3,7 @@ public interface IVirus {
 
     int getSymptomsVisibility();
 
+    VirusData getVirusData();
+
     boolean hasMutatedLastStep();
 }
