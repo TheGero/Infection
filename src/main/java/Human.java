@@ -6,7 +6,15 @@ public class Human extends AbstractHuman {
     }
 
     @Override
-    public void update() {/*TODO:Implement*/}
+    public void update()
+    {
+        if (!isAlive()) return;
+        if(!flee())
+        {move();}
+        if (isInfected())
+            getVirus().update();
+
+    }
 
     @Override
     public boolean isDoctor() {
