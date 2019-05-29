@@ -21,8 +21,16 @@ public abstract class AbstractHuman implements IHuman {
     }
 
     @Override
-    public boolean hasVisibleSymptoms() {/*temporary TODO:Implement*/
-        return true;
+    public boolean hasVisibleSymptoms() {
+        if (!isInfected()) return false;
+
+        int visSum = virus.getSymptomsVisibility();
+        if (visSum >= 100)
+            return true;
+        else {
+            int r = RandomNumberGenerator.getIntegerFromRange(0, 100);
+            return r <= visSum;
+        }
     }
 
     @Override
