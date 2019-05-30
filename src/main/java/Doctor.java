@@ -26,7 +26,7 @@ public class Doctor extends AbstractHuman {
     private void heal(IHuman patient) {
         int r = RandomNumberGenerator.getIntegerFromRange(0, 100);
         int chanceToHeal = 100 - patient.getVirus().getVirusData().resistanceToTreatment;
-        if (r <= chanceToHeal)
+        if (r < chanceToHeal)
             patient.cure();
     }
 

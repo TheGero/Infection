@@ -5,6 +5,7 @@ public abstract class AbstractHuman implements IHuman {
     private Coordinates coordinates;
 
     public AbstractHuman(Map parentMap) {
+        coordinates = new Coordinates();
         this.parentMap = parentMap;
         alive = true;
         virus = null;
@@ -29,7 +30,7 @@ public abstract class AbstractHuman implements IHuman {
             return true;
         else {
             int r = RandomNumberGenerator.getIntegerFromRange(0, 100);
-            return r <= visSum;
+            return r < visSum;
         }
     }
 
@@ -95,7 +96,7 @@ public abstract class AbstractHuman implements IHuman {
 
     public void move() {
         int direction = RandomNumberGenerator.getIntegerFromRange(1,4);
-        int range = RandomNumberGenerator.getIntegerFromRange(1,2);
+        int range = RandomNumberGenerator.getIntegerFromRange(1, 5);
         move(direction, range);
     }
 }

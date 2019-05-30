@@ -79,7 +79,15 @@ public class Map
     public int getMutationCount() {
         int i = 0;
         for (IHuman h : humans) {
-            if (h.isInfected() && h.getVirus().hasMutatedLastStep()) i++;
+            if (h.isAlive() && h.isInfected() && h.getVirus().hasMutatedLastStep()) i++;
+        }
+        return i;
+    }
+
+    public int getDeadCount() {
+        int i = 0;
+        for (IHuman h : humans) {
+            if (!h.isAlive()) i++;
         }
         return i;
     }

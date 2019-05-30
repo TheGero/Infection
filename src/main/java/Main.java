@@ -47,12 +47,12 @@ class Main {
 
         System.out.println("<welcome user>");
         System.out.println("Please input the simulation data. (type 'r' to set random value instead)");
-        mapSize = getInt("map size <integer> [0, 2147483647]: ", 1, 2147483647);
-        stepLimit = getInt("step limit <integer>: [1,2147483647]: ", 1, 2147483647);
-        humanCount = getInt("Population <integer> [1,2147483647]: ", 1, 2147483647);
-        doctorCount = getInt("Number of Doctors <integer> [1,2147483647]: ", 1, 2147483647);
+        mapSize = getInt("map size <integer> [0, 20000]: ", 1, 20000);
+        stepLimit = getInt("step limit <integer>: [1,2000000]: ", 1, 200000);
+        humanCount = getInt("Population <integer> [1,2000]: ", 1, 2000);
+        doctorCount = getInt("Number of Doctors <integer> [0,2000]: ", 1, 2000);
         virusData.spreadChance = getInt("Virus's spread chance <integer> [0,100]: ", 0, 100);
-        virusData.spreadRange = getInt("Virus's spread range <integer> [0,5]: ", 0, 5);
+        virusData.spreadRange = getInt("Virus's spread range <integer> [0,10]: ", 0, 10);
         virusData.mutationChance = getInt("Virus's mutation chance <integer> [0,100]: ", 0, 100);
         virusData.lethality = getInt("Virus's lethality <integer> [0,100]: ", 0, 100);
         virusData.resistanceToTreatment = getInt("Virus's resistance to treatment <integer> [0,100]: ", 0, 100);
