@@ -2,11 +2,18 @@ import java.util.Random;
 
 import static java.lang.Math.abs;
 
+/**
+ * Class used to generate random numbers
+ *
+ * @author Kacper Leśniański, Patryk Płóciennik
+ * @version 1.0
+ */
 public class RandomNumberGenerator {
     /**
-     * @param start
-     * @param end
-     * @return returns randomly generated int from given range
+     * Static method returning Integer from given range
+     * @param start start of interval of valid values
+     * @param end end of interval of valid values
+     * @return randomly generated integer from given range
      */
     public static int getIntegerFromRange(int start, int end) {
 

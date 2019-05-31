@@ -1,9 +1,14 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A "struct" containing various parameters of virus
+ * Used for conveniently moving data between classes
+ *
+ * @author Kacper Leśniański, Patryk Płóciennik
+ * @version 1.0
+ */
 public class VirusData {
-
 
     public int spreadRange;
     public int spreadChance;
@@ -12,11 +17,16 @@ public class VirusData {
     public int resistanceToTreatment;
     List<Symptom> symptoms;
 
-    //copy constructor
+    /**
+     * Default constructor
+     */
     VirusData(){
         symptoms = new ArrayList<>();
     }
 
+    /**
+     * Copy constructor
+     */
     public VirusData(VirusData source) {
         this.spreadChance = source.spreadChance;
         this.spreadRange = source.spreadRange;

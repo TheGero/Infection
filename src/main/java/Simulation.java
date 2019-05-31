@@ -2,6 +2,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * This class is responsible for running the simulation
+ * and saving data to CSV file.
+ *
+ * @author Kacper Leśniański, Patryk Płóciennik
+ * @version 1.0
+ */
 public class Simulation {
     private int stepLimit;
     private int stepCounter;
@@ -13,10 +20,17 @@ public class Simulation {
     private int[] deadCountArray;
     private int[] mutationCountArray;
 
-    private Simulation() {
-    }
-
-    public Simulation(int mapSize, int stepLimit, int humanCount, int doctorCount,int infectedCount, VirusData virusData) {
+    /**
+     * Constructor initialises arrays and Map.
+     *
+     * @param mapSize       size of the Map to create
+     * @param stepLimit     maximum number of steps of the simulation
+     * @param humanCount    number of not infected Humans to create
+     * @param doctorCount   number of Doctors to create
+     * @param infectedCount number of infected Humans to create
+     * @param virusData     data of Virus to infect Humans with
+     */
+    public Simulation(int mapSize, int stepLimit, int humanCount, int doctorCount, int infectedCount, VirusData virusData) {
         map = new Map(mapSize, humanCount, doctorCount,infectedCount, virusData);
         this.stepLimit = stepLimit;
         stepCounter = 0;
@@ -28,6 +42,13 @@ public class Simulation {
         mutationCountArray = new int[stepLimit];
     }
 
+    /**
+     * Run simulation until an ending condition is met
+     * Ending conditions:
+     * -step Limit reached
+     * -no infected Humans left
+     * -no living Humans left
+     */
     public void run() {
         while (stepCounter < stepLimit && map.getInfectedLeft() > 0 && map.getHumansLeft() > 0) {
             step();
@@ -37,12 +58,18 @@ public class Simulation {
         writeResultsToFile();
     }
 
+    /**
+     * Update map, increment stepCounter and print stepCounter to console
+     */
     private void step() {
         map.update();
         stepCounter++;
-        System.out.println(stepCounter);
+        System.out.println("Step: " + stepCounter);
     }
 
+    /**
+     * Store simulation data from last step
+     */
     private void logStep() {
         humanCountArray[stepCounter - 1] = map.getHumansLeft();
         doctorCountArray[stepCounter-1] = map.getDoctorsLeft();
@@ -51,6 +78,9 @@ public class Simulation {
         mutationCountArray[stepCounter - 1] = map.getMutationCount();
     }
 
+    /**
+     * Write simulation data from all steps to CSV file
+     */
     public void writeResultsToFile() {
         File file;
         FileWriter fw;

@@ -1,15 +1,32 @@
 import java.util.List;
 
+/**
+ * Class representing a Virus
+ *
+ * @author Kacper Leśniański, Patryk Płóciennik
+ * @version 1.0
+ */
 public class Virus implements IVirus {
     private IHuman host;
     private VirusData data;
     private boolean mutatedLastStep = false;
 
+    /**
+     * Creates a Virus with given data
+     *
+     * @param host reference to Virus's host
+     * @param data Virus's data
+     */
     public Virus(IHuman host, VirusData data) {
         this.host = host;
         this.data = data;
     }
 
+    /**
+     * Method called each step of the simulation
+     * Virus tries to mutate, infect nearby Humans,
+     * and to kill its host (in this exact order)
+     */
     public void update() {
         int r = RandomNumberGenerator.getIntegerFromRange(0, 100);
         if (r < data.mutationChance) {
@@ -31,8 +48,17 @@ public class Virus implements IVirus {
 
     }
 
-    public VirusData getVirusData() { return data; }
+    /**
+     *
+     * @return Virus's data
+     */
+    public VirusData getVirusData() { return data;
+    }
 
+    /**
+     *
+     * @return Sum of visibility parameter of all Symptoms caused by this Virus
+     */
     public int getSymptomsVisibility() {
         int visibilitySum = 0;
 
@@ -43,10 +69,18 @@ public class Virus implements IVirus {
         return visibilitySum;
     }
 
+    /**
+     *
+     * @return true if mutated last step
+     */
     public boolean hasMutatedLastStep() {
         return mutatedLastStep;
     }
 
+    /**
+     * Virus attempts to infect human with its copy
+     * @param human Human to infect
+     */
     private void infect(IHuman human) {
         int r = RandomNumberGenerator.getIntegerFromRange(0, 100);
         if (r < data.spreadChance) {
@@ -55,6 +89,12 @@ public class Virus implements IVirus {
         }
     }
 
+    /**
+     * Virus mutates.
+     * Random Virus data is generated and added to existing data
+     * There is also a chance to develop new Symptoms
+     * Mutations can affect the Virus both positively and negatively
+     */
     private void mutate() {
         int spreadRange = RandomNumberGenerator.getIntegerFromRange(-2, 2);
         int spreadChance = RandomNumberGenerator.getIntegerFromRange(-10, 10);
