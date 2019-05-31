@@ -11,16 +11,27 @@ public abstract class AbstractHuman implements IHuman {
         virus = null;
     }
 
+    /**
+     * @return boolean (true value) if is alive
+     */
     @Override
     public boolean isAlive() {
         return alive;
     }
 
+    /**
+     *
+     * @return boolean (true value) if is infected
+     */
     @Override
     public boolean isInfected() {
         return (virus != null);
     }
 
+    /**
+     *
+     * @return boolean (true value) if has visible symptoms of infection
+     */
     @Override
     public boolean hasVisibleSymptoms() {
         if (!isInfected()) return false;
@@ -34,11 +45,19 @@ public abstract class AbstractHuman implements IHuman {
         }
     }
 
+    /**
+     *
+     * @param virus
+     * infects human with virus
+     */
     @Override
     public void infect(IVirus virus) {
         this.virus = virus;
     }
 
+    /**
+     * cures
+     */
     @Override
     public void cure() {
         virus = null;

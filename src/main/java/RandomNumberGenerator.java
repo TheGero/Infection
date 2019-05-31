@@ -3,6 +3,11 @@ import java.util.Random;
 import static java.lang.Math.abs;
 
 public class RandomNumberGenerator {
+    /**
+     * @param start
+     * @param end
+     * @return returns randomly generated int from given range
+     */
     public static int getIntegerFromRange(int start, int end) {
 
         if (start > end) throw new IllegalArgumentException();
