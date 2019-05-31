@@ -10,7 +10,7 @@ public class Map
     private List<IHuman> humans;
     private HumanCreator hCreator;
 
-    public Map(int size, int humanCount, int doctorCount, VirusData virusData) {
+    public Map(int size, int humanCount, int doctorCount,int infectedCount, VirusData virusData) {
         this.size=size;
         humans = new ArrayList<>();
         hCreator = new HumanCreator();
@@ -23,7 +23,7 @@ public class Map
             h.setCoordinates(c);
             humans.add(h);
         }
-        for (int i = 0; i < humanCount - 1; i++) {
+        for (int i = 0; i < humanCount ; i++) {
             IHuman h = hCreator.createHuman(this);
             int x = RandomNumberGenerator.getIntegerFromRange(1, size);
             int y = RandomNumberGenerator.getIntegerFromRange(1, size);
@@ -31,7 +31,7 @@ public class Map
             h.setCoordinates(c);
             humans.add(h);
         }
-        startInfection(virusData);
+        startInfection(virusData, infectedCount);
     }
 
     public void update() {
@@ -94,9 +94,14 @@ public class Map
 
     public int getSize(){return size;}
 
-    private void startInfection(VirusData virusData) {
-        IHuman h = hCreator.createInfected(this, virusData);
-        humans.add(h);
+    private void startInfection(VirusData virusData, int infectedCount) {
+        for (int i = 0; i < infectedCount; i++) {
+            IHuman h = hCreator.createInfected(this, new VirusData(virusData));
+            int x = RandomNumberGenerator.getIntegerFromRange(1, size);
+            int y = RandomNumberGenerator.getIntegerFromRange(1, size);
+            Coordinates c = new Coordinates(x, y);
+            h.setCoordinates(c);
+            humans.add(h);
+        }
     }
-
 }

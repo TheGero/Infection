@@ -16,8 +16,8 @@ public class Simulation {
     private Simulation() {
     }
 
-    public Simulation(int mapSize, int stepLimit, int humanCount, int doctorCount, VirusData virusData) {
-        map = new Map(mapSize, humanCount, doctorCount, virusData);
+    public Simulation(int mapSize, int stepLimit, int humanCount, int doctorCount,int infectedCount, VirusData virusData) {
+        map = new Map(mapSize, humanCount, doctorCount,infectedCount, virusData);
         this.stepLimit = stepLimit;
         stepCounter = 0;
 

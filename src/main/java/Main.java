@@ -7,6 +7,7 @@ class Main {
     private int mapSize;
     private int humanCount;
     private int doctorCount;
+    private int infectedCount;
 
     public static void main(String[] args){
         Main m = new Main();
@@ -51,6 +52,7 @@ class Main {
         stepLimit = getInt("step limit <integer>: [1,2000000]: ", 1, 200000);
         humanCount = getInt("Population <integer> [1,2000]: ", 1, 2000);
         doctorCount = getInt("Number of Doctors <integer> [0,2000]: ", 1, 2000);
+        infectedCount = getInt("Number of Infected humans <integer>  [1,100]: ", 1,100);
         virusData.spreadChance = getInt("Virus's spread chance <integer> [0,100]: ", 0, 100);
         virusData.spreadRange = getInt("Virus's spread range <integer> [0,10]: ", 0, 10);
         virusData.mutationChance = getInt("Virus's mutation chance <integer> [0,100]: ", 0, 100);
@@ -60,7 +62,7 @@ class Main {
     }
 
     private void runSimulation() {
-        Simulation simulation = new Simulation(mapSize, stepLimit, humanCount, doctorCount, virusData);
+        simulation = new Simulation(mapSize, stepLimit, humanCount, doctorCount,infectedCount, virusData);
         simulation.run();
         simulation.writeResultsToFile();
     }
