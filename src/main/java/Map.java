@@ -4,12 +4,27 @@ import java.util.List;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
+
+/**
+* Map creates, stores and updates Humans.
+*
+* @author  Kacper Leśniański, Patryk Płóciennik
+* @version 1.0
+*/
 public class Map
 {
     private int size;
     private List<IHuman> humans;
     private HumanCreator hCreator;
 
+    /**
+     * Creates Map, populates it with desired number of Humans, Doctors, and Humans infected by Virus
+     * @param size Size of the map
+     * @param humanCount Number of not infected humans to place on the map
+     * @param doctorCount Number of Doctors to place on the map
+     * @param infectedCount Number of infected Humans to place on the map
+     * @param virusData Data of the Virus
+     */
     public Map(int size, int humanCount, int doctorCount,int infectedCount, VirusData virusData) {
         this.size=size;
         humans = new ArrayList<>();
@@ -34,12 +49,21 @@ public class Map
         startInfection(virusData, infectedCount);
     }
 
+    /**
+     * Calls update() method of every Human on the Map
+     */
     public void update() {
         for (IHuman h : humans) {
             h.update();
         }
     }
 
+    /**
+     * Returns ArrayList of Humans, whose Euclidean distance from given coordinates is less or equal to range parameter.
+     * @param coordinates Point to start measuring from
+     * @param range Maximum range
+     * @return
+     */
     public List<IHuman> getHumansInRange(Coordinates coordinates, int range) {
         List<IHuman> humansInRange = new ArrayList<>();
         for (IHuman h : humans) {
@@ -52,6 +76,10 @@ public class Map
         return humansInRange;
     }
 
+    /**
+     * 
+     * @return Number of living Humans left on the Map
+     */
     public int getHumansLeft() {
         int i = 0;
         for (IHuman h : humans) {
@@ -60,6 +88,10 @@ public class Map
         return i;
     }
 
+    /**
+     * 
+     * @return Number of living Doctors left on the Map
+     */
     public int getDoctorsLeft() {
         int i = 0;
         for (IHuman h : humans) {
@@ -68,6 +100,10 @@ public class Map
         return i;
     }
 
+    /**
+     * 
+     * @return Number of living infected Humans left on the Map
+     */
     public int getInfectedLeft() {
         int i = 0;
         for (IHuman h : humans) {
@@ -76,14 +112,10 @@ public class Map
         return i;
     }
 
-    public int getMutationCount() {
-        int i = 0;
-        for (IHuman h : humans) {
-            if (h.isAlive() && h.isInfected() && h.getVirus().hasMutatedLastStep()) i++;
-        }
-        return i;
-    }
-
+    /**
+     * 
+     * @return  number of dead Humans on the Map
+     */
     public int getDeadCount() {
         int i = 0;
         for (IHuman h : humans) {
@@ -92,8 +124,29 @@ public class Map
         return i;
     }
 
+    /**
+     * 
+     * @return  number of Mutations that occured last step
+     */
+    public int getMutationCount() {
+        int i = 0;
+        for (IHuman h : humans) {
+            if (h.isAlive() && h.isInfected() && h.getVirus().hasMutatedLastStep()) i++;
+        }
+        return i;
+    }
+
+    /**
+     * 
+     * @return Size of the Map
+     */
     public int getSize(){return size;}
 
+    /**
+     * Puts a specified number of infected Humans on the Map
+     * @param virusData Data of Virus to infect Humans with
+     * @param infectedCount Number of infected Humans to create
+     */
     private void startInfection(VirusData virusData, int infectedCount) {
         for (int i = 0; i < infectedCount; i++) {
             IHuman h = hCreator.createInfected(this, new VirusData(virusData));
