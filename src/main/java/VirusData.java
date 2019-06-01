@@ -26,6 +26,7 @@ public class VirusData {
 
     /**
      * Copy constructor
+     * @param source VirusData object to copy
      */
     public VirusData(VirusData source) {
         this.spreadChance = source.spreadChance;

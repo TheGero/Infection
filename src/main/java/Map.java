@@ -59,10 +59,10 @@ public class Map
     }
 
     /**
-     * Returns ArrayList of Humans, whose Euclidean distance from given coordinates is less or equal to range parameter.
+     * Returns List of Humans, whose Euclidean distance from given coordinates is less or equal to range parameter.
      * @param coordinates Point to start measuring from
      * @param range Maximum range
-     * @return
+     * @return List of Humans whose Euclidean distance from given coordinates is less or equal to range parameter
      */
     public List<IHuman> getHumansInRange(Coordinates coordinates, int range) {
         List<IHuman> humansInRange = new ArrayList<>();
