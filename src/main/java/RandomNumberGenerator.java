@@ -3,17 +3,17 @@ import java.util.Random;
 import static java.lang.Math.abs;
 
 /**
- * Class used to generate random numbers
+ * Class used to generate random numbers.
  *
- * @author Kacper Leśniański, Patryk Płóciennik
+ * @author Kacper Lesnianski, Patryk Plociennik
  * @version 1.0
  */
 public class RandomNumberGenerator {
     /**
-     * Static method returning Integer from given range
-     * @param start start of interval of valid values
-     * @param end end of interval of valid values
-     * @return randomly generated integer from given range
+     * Static method returning an Integer from given range.
+     * @param start start of interval of valid values.
+     * @param end end of interval of valid values.
+     * @return randomly generated integer from given range.
      */
     public static int getIntegerFromRange(int start, int end) {
 

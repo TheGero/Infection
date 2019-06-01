@@ -1,15 +1,15 @@
 /**
- * HumanCreator creates new Human , Doctor and Virus class objects.
+ * HumanCreator creates new Human , Doctor and Virus objects.
  *
- * @author Kacper Leśniański, Patryk Płóciennik
+ * @author Kacper Lesnianski, Patryk Plociennik
  * @version 1.0
  */
 public class HumanCreator {
     /**
-     * creates new Human objects.
+     * Creates new Human object.
      *
      * @param parentMap Reference to Map storing the Human.
-     * @return new Human objects.
+     * @return new Human object.
      */
     public IHuman createHuman(Map parentMap) {
         Human h = new Human(parentMap);
@@ -17,10 +17,10 @@ public class HumanCreator {
     }
 
     /**
-     * creates new Doctor objects.
+     * Creates new Doctor object.
      *
-     * @param parentMap Reference to Map storing the Human.
-     * @return new Doctor objects.
+     * @param parentMap Reference to Map storing the Doctor.
+     * @return new Doctor object.
      */
     public IHuman createDoctor(Map parentMap) {
         Doctor d = new Doctor(parentMap);
@@ -28,11 +28,11 @@ public class HumanCreator {
     }
 
     /**
-     * creates new Virus objects.
+     * Creates new Human object and infects it with a Virus.
      *
      * @param parentMap Reference to Map storing the Human.
      * @param vData     Reference to VirusData class.
-     * @return new Virus object.
+     * @return new Human object infected with new Virus object.
      */
     public IHuman createInfected(Map parentMap, VirusData vData) {
         IHuman h = createHuman(parentMap);

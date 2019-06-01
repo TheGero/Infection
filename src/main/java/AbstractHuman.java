@@ -1,7 +1,7 @@
 /**
- * AbstractHuman stores fields and methods shared by Human and Doctor classes;
+ * AbstractHuman stores fields and methods shared by Human and Doctor classes.
  *
- * @author Kacper Leśniański, Patryk Płóciennik
+ * @author Kacper Lesnianski, Patryk Plociennik
  * @version 1.0
  */
 public abstract class AbstractHuman implements IHuman {
@@ -13,7 +13,7 @@ public abstract class AbstractHuman implements IHuman {
     /**
      * Sets default values
      *
-     * @param parentMap Reference to Map storing the Human
+     * @param parentMap Reference to Map storing the Human.
      */
     public AbstractHuman(Map parentMap) {
         coordinates = new Coordinates();
@@ -23,7 +23,7 @@ public abstract class AbstractHuman implements IHuman {
     }
 
     /**
-     * @return true if Human is alive
+     * @return true if Human is alive.
      */
     @Override
     public boolean isAlive() {
@@ -32,7 +32,7 @@ public abstract class AbstractHuman implements IHuman {
 
     /**
      *
-     * @return true if Human is infected
+     * @return true if Human is infected.
      */
     @Override
     public boolean isInfected() {
@@ -41,7 +41,7 @@ public abstract class AbstractHuman implements IHuman {
 
     /**
      *
-     * @return true if Human has visible symptoms of infection
+     * @return true if Human has visible symptoms of infection.
      */
     @Override
     public boolean hasVisibleSymptoms() {
@@ -58,7 +58,7 @@ public abstract class AbstractHuman implements IHuman {
 
     /**
      * Infects Human with Virus.
-     * @param virus reference to Virus to infect Human with.
+     * @param virus Virus to infect Human with.
      */
     @Override
     public void infect(IVirus virus) {
@@ -66,7 +66,7 @@ public abstract class AbstractHuman implements IHuman {
     }
 
     /**
-     *  method used by Doctor class objects to cure infected Humans.
+     *  Cure from infection.
      */
     @Override
     public void cure() {
@@ -74,7 +74,7 @@ public abstract class AbstractHuman implements IHuman {
     }
 
     /**
-     * method used by Virus to kill infected Humans.
+     * Kill (set alive to false).
      */
     @Override
     public void kill() {
@@ -92,7 +92,7 @@ public abstract class AbstractHuman implements IHuman {
 
     /**
      *
-     * @return reference to Coordinates object in AbstractHuman class.
+     * @return Coordinates.
      */
     @Override
     public Coordinates getCoordinates() {
@@ -100,8 +100,8 @@ public abstract class AbstractHuman implements IHuman {
     }
 
     /**
-     * Sets Coordinates of Human.
-     * @param coordinates Coordinates to set
+     * Sets Coordinates.
+     * @param coordinates Coordinates to set.
      */
     @Override
     public void setCoordinates(Coordinates coordinates) {
@@ -110,7 +110,7 @@ public abstract class AbstractHuman implements IHuman {
 
     /**
      *
-     * @return reference to Virus.
+     * @return reference to Virus(Returns null if not infected).
      */
     @Override
     public IVirus getVirus() {
@@ -118,9 +118,9 @@ public abstract class AbstractHuman implements IHuman {
     }
 
     /**
-     * Move in specified direction
-     * @param direction Direction of move
-     * @param range Range of move
+     * Move in specified direction.
+     * @param direction Direction of move.
+     * @param range Range of move.
      */
     public void move(int direction, int range) {
         // 1 = Moving Up
@@ -148,7 +148,7 @@ public abstract class AbstractHuman implements IHuman {
     }
 
     /**
-     * Move in random direction
+     * Move in random direction.
      */
     public void move() {
         int direction = RandomNumberGenerator.getIntegerFromRange(1,4);

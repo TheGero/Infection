@@ -1,7 +1,7 @@
 /**
- * Class representing a Symptom of infection
+ * Class representing a Symptom of infection.
  *
- * @author Kacper Leśniański, Patryk Płóciennik
+ * @author Kacper Lesnianski, Patryk Plociennik
  * @version 1.0
  */
 public class Symptom {
@@ -9,9 +9,9 @@ public class Symptom {
     private int visibility;
 
     /**
-     * Create Symptom with set visibility
+     * Create Symptom with set visibility.
      *
-     * @param visibility visibility of Symptom
+     * @param visibility visibility of Symptom.
      */
     public Symptom(int visibility) {
         this.visibility = visibility;
@@ -19,7 +19,7 @@ public class Symptom {
 
     /**
      *
-     * @return visibility of the Symptom
+     * @return visibility of the Symptom.
      */
     public int getVisibility() {
         return visibility;

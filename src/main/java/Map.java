@@ -8,7 +8,7 @@ import static java.lang.Math.sqrt;
 /**
 * Map creates, stores and updates Humans.
 *
-* @author  Kacper Leśniański, Patryk Płóciennik
+ * @author Kacper Lesnianski, Patryk Plociennik
 * @version 1.0
 */
 public class Map
@@ -18,12 +18,12 @@ public class Map
     private HumanCreator hCreator;
 
     /**
-     * Creates Map, populates it with desired number of Humans, Doctors, and Humans infected by Virus
-     * @param size Size of the map
-     * @param humanCount Number of not infected humans to place on the map
-     * @param doctorCount Number of Doctors to place on the map
-     * @param infectedCount Number of infected Humans to place on the map
-     * @param virusData Data of the Virus
+     * Creates Map, populates it with desired number of Humans, Doctors, and Humans infected by Virus.
+     * @param size Size of the map.
+     * @param humanCount Number of not infected humans to place on the map.
+     * @param doctorCount Number of Doctors to place on the map.
+     * @param infectedCount Number of infected Humans to place on the map.
+     * @param virusData Data of the Virus.
      */
     public Map(int size, int humanCount, int doctorCount,int infectedCount, VirusData virusData) {
         this.size=size;
@@ -50,7 +50,7 @@ public class Map
     }
 
     /**
-     * Calls update() method of every Human on the Map
+     * Calls update() method of every Human on the Map.
      */
     public void update() {
         for (IHuman h : humans) {
@@ -60,9 +60,9 @@ public class Map
 
     /**
      * Returns List of Humans, whose Euclidean distance from given coordinates is less or equal to range parameter.
-     * @param coordinates Point to start measuring from
-     * @param range Maximum range
-     * @return List of Humans whose Euclidean distance from given coordinates is less or equal to range parameter
+     * @param coordinates Point to start measuring from.
+     * @param range Maximum range.
+     * @return List of Humans whose Euclidean distance from given coordinates is less or equal to range parameter.
      */
     public List<IHuman> getHumansInRange(Coordinates coordinates, int range) {
         List<IHuman> humansInRange = new ArrayList<>();
@@ -77,8 +77,8 @@ public class Map
     }
 
     /**
-     * 
-     * @return Number of living Humans left on the Map
+     *
+     * @return Number of living Humans left on the Map.
      */
     public int getHumansLeft() {
         int i = 0;
@@ -89,8 +89,8 @@ public class Map
     }
 
     /**
-     * 
-     * @return Number of living Doctors left on the Map
+     *
+     * @return Number of living Doctors left on the Map.
      */
     public int getDoctorsLeft() {
         int i = 0;
@@ -101,8 +101,8 @@ public class Map
     }
 
     /**
-     * 
-     * @return Number of living infected Humans left on the Map
+     *
+     * @return Number of living infected Humans left on the Map.
      */
     public int getInfectedLeft() {
         int i = 0;
@@ -113,8 +113,8 @@ public class Map
     }
 
     /**
-     * 
-     * @return  number of dead Humans on the Map
+     *
+     * @return Number of dead Humans on the Map.
      */
     public int getDeadCount() {
         int i = 0;
@@ -125,8 +125,8 @@ public class Map
     }
 
     /**
-     * 
-     * @return  number of Mutations that occured last step
+     *
+     * @return number of Mutations that occurred last step.
      */
     public int getMutationCount() {
         int i = 0;
@@ -137,15 +137,15 @@ public class Map
     }
 
     /**
-     * 
-     * @return Size of the Map
+     *
+     * @return Size of the Map.
      */
     public int getSize(){return size;}
 
     /**
-     * Puts a specified number of infected Humans on the Map
-     * @param virusData Data of Virus to infect Humans with
-     * @param infectedCount Number of infected Humans to create
+     * Puts a specified number of infected Humans on the Map.
+     * @param virusData Data of Virus to infect Humans with.
+     * @param infectedCount Number of infected Humans to create.
      */
     private void startInfection(VirusData virusData, int infectedCount) {
         for (int i = 0; i < infectedCount; i++) {

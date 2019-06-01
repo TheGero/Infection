@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 /**
  * The purpose of this class is to get required data from user
- * (or generate them randomly) and start the Simulation
- * 
- * @author Kacper Leśniański, Patryk Płóciennik
+ * (or generate them randomly) and start the Simulation.
+ *
+ * @author Kacper Lesnianski, Patryk Plociennik
  * @version 1.0
  */
 class Main {
@@ -17,8 +17,8 @@ class Main {
     private int infectedCount;
 
     /**
-     * Entry point
-     * @param args command line parameters (unused)
+     * Entry point.
+     * @param args command line parameters (unused).
      */
     public static void main(String[] args){
         Main m = new Main();
@@ -27,11 +27,11 @@ class Main {
     }
 
     /**
-     * Get an integer from specified interval from user, or generate it randomly on user's request
-     * @param message Message to display to user
-     * @param validStart Start of valid values interval
-     * @param validEnd End of valid values interval
-     * @return integer from specified interval
+     * Get an integer from specified interval from user, or generate it randomly on user's request.
+     * @param message Message to display to user.
+     * @param validStart Start of valid values interval.
+     * @param validEnd End of valid values interval.
+     * @return integer from specified interval.
      */
     private int getInt(String message, int validStart, int validEnd){
         int value;
@@ -60,7 +60,7 @@ class Main {
     }
 
     /**
-     * Print welcome message and ask the User for parameters
+     * Print welcome message and ask the User for parameters.
      */
     private void getDataFromUser(){
         virusData = new VirusData();
@@ -81,7 +81,7 @@ class Main {
     }
 
     /**
-     * Start simulation
+     * Start simulation.
      */
     private void runSimulation() {
         simulation = new Simulation(mapSize, stepLimit, humanCount, doctorCount,infectedCount, virusData);

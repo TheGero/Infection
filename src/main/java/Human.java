@@ -1,13 +1,13 @@
 import java.util.List;
 /**
- * Class representing a regular Human
- * @author Kacper Leśniański, Patryk Płóciennik
+ * Class representing a regular Human.
+ * @author Kacper Lesnianski, Patryk Plociennik
  * @version 1.0
  */
 public class Human extends AbstractHuman {
     /**
-     * Constructor (calls AbstractHuman constructor)
-     * @param parentMap Reference to Map storing Human
+     * Constructor (calls AbstractHuman constructor).
+     * @param parentMap Reference to Map storing Human.
      */
     public Human(Map parentMap) {
         super(parentMap);
@@ -15,8 +15,8 @@ public class Human extends AbstractHuman {
 
     /**
      * Method called on each step of the simulation.
-     * Controls all actions of the Human: fleeing or moving randomly
-     * If Human is infected, updates Virus
+     * Controls all actions of the Human: fleeing or moving randomly.
+     * If Human is infected, updates Virus.
      */
     @Override
     public void update()
@@ -30,8 +30,8 @@ public class Human extends AbstractHuman {
     }
 
     /**
-     * This method is required to discriminate between a Doctor and a Human without using instanceof()
-     * (Used in class Map)
+     * This method is required to discriminate between a Doctor and a Human without using instanceof().
+     * (Used in class Map).
      * @return true if is a Doctor.
      */
     @Override
@@ -42,7 +42,7 @@ public class Human extends AbstractHuman {
     /**
      * Check if there are any infected with visible symptoms nearby
      * and try to get away from them.
-     * @return true if spotted an infected Human and ran away
+     * @return true if spotted an infected Human and ran away.
      */
     private boolean flee() {
         if (isInfected())

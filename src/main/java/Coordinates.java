@@ -1,5 +1,5 @@
 /**
- * Coordinates stores X and Y Map coordinates of Human and Doctor objects
+ * Coordinates stores X and Y coordinates of Human and Doctor objects.
  *
  * @author Kacper Leśniański , Patryk Płóciennik
  * @version 1.0
@@ -37,7 +37,7 @@ public class Coordinates
     /**
      * Sets X Coordinate value.
      *
-     * @param X - X Coordinate of Human stored in the Map.
+     * @param X - X Coordinate.
      */
     public void setX(int X) {
         this.X = X;
@@ -53,7 +53,7 @@ public class Coordinates
     /**
      * Sets Y Coordinate value.
      *
-     * @param Y - Y Coordinate of Human stored in the Map.
+     * @param Y - Y Coordinate.
      */
     public void setY(int Y) {
         this.Y = Y;

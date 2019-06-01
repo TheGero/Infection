@@ -6,7 +6,7 @@ import java.io.IOException;
  * This class is responsible for running the simulation
  * and saving data to CSV file.
  *
- * @author Kacper Leśniański, Patryk Płóciennik
+ * @author Kacper Lesnianski, Patryk Plociennik
  * @version 1.0
  */
 public class Simulation {
@@ -23,12 +23,12 @@ public class Simulation {
     /**
      * Constructor initialises arrays and Map.
      *
-     * @param mapSize       size of the Map to create
-     * @param stepLimit     maximum number of steps of the simulation
-     * @param humanCount    number of not infected Humans to create
-     * @param doctorCount   number of Doctors to create
-     * @param infectedCount number of infected Humans to create
-     * @param virusData     data of Virus to infect Humans with
+     * @param mapSize       size of the Map to create.
+     * @param stepLimit     maximum number of steps of the simulation.
+     * @param humanCount    number of not infected Humans to create.
+     * @param doctorCount   number of Doctors to create.
+     * @param infectedCount number of infected Humans to create.
+     * @param virusData     data of Virus to infect Humans with.
      */
     public Simulation(int mapSize, int stepLimit, int humanCount, int doctorCount, int infectedCount, VirusData virusData) {
         map = new Map(mapSize, humanCount, doctorCount,infectedCount, virusData);
@@ -43,7 +43,7 @@ public class Simulation {
     }
 
     /**
-     * Run simulation until an ending condition is met
+     * Run simulation until an ending condition is met.
      * Ending conditions:
      * -step Limit reached
      * -no infected Humans left
@@ -59,7 +59,7 @@ public class Simulation {
     }
 
     /**
-     * Update map, increment stepCounter and print stepCounter to console
+     * Update map, increment stepCounter and print stepCounter to console.
      */
     private void step() {
         map.update();
@@ -68,7 +68,7 @@ public class Simulation {
     }
 
     /**
-     * Store simulation data from last step
+     * Store simulation data from last step.
      */
     private void logStep() {
         humanCountArray[stepCounter - 1] = map.getHumansLeft();
@@ -79,7 +79,7 @@ public class Simulation {
     }
 
     /**
-     * Write simulation data from all steps to CSV file
+     * Write simulation data from all steps to CSV file.
      */
     public void writeResultsToFile() {
         File file;

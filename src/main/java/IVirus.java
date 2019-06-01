@@ -1,7 +1,7 @@
 /**
  * An interface Virus objects.
  *
- * @author Kacper Leśniański, Patryk Płóciennik
+ * @author Kacper Lesnianski, Patryk Plociennik
  * @version 1.0
  */
 public interface IVirus {
@@ -22,7 +22,7 @@ public interface IVirus {
 
     /**
      *
-     * @return true if Virus has mutaded.
+     * @return true if Virus has mutated.
      */
     boolean hasMutatedLastStep();
 }
