@@ -96,11 +96,11 @@ public class Virus implements IVirus {
      * Mutations can affect the Virus both positively and negatively.
      */
     private void mutate() {
-        int spreadRange = RandomNumberGenerator.getIntegerFromRange(-2, 2);
-        int spreadChance = RandomNumberGenerator.getIntegerFromRange(-2, 2);
-        int mutationChance = RandomNumberGenerator.getIntegerFromRange(-1, 1);
-        int lethality = RandomNumberGenerator.getIntegerFromRange(-1, 1);
-        int resistanceToTreatment = RandomNumberGenerator.getIntegerFromRange(-1, 1);
+        int spreadRange = RandomNumberGenerator.getIntegerFromRange(-1, 1);
+        int spreadChance = RandomNumberGenerator.getIntegerFromRange(-5, 5);
+        int mutationChance = RandomNumberGenerator.getIntegerFromRange(-2, 2);
+        int lethality = RandomNumberGenerator.getIntegerFromRange(-10, 10);
+        int resistanceToTreatment = RandomNumberGenerator.getIntegerFromRange(-5, 5);
 
         //chance to develop a new symptom
         int r = RandomNumberGenerator.getIntegerFromRange(0, 1);
@@ -124,8 +124,8 @@ public class Virus implements IVirus {
         //we don't want these values to exceed valid ranges TODO:maybe move those checks to virusData getters/setters?
         if (data.spreadRange > 5) data.spreadRange = 5;
         if (data.spreadRange < 0) data.spreadRange = 0;
-        if (data.spreadChance > 100) data.spreadRange = 100;
-        if (data.spreadChance < 0) data.spreadRange = 0;
+        if (data.spreadChance > 100) data.spreadChance = 100;
+        if (data.spreadChance < 0) data.spreadChance = 0;
         if (data.mutationChance > 100) data.mutationChance = 100;
         if (data.mutationChance < 0) data.mutationChance = 0;
         if (data.lethality < 0) data.lethality = 0;
