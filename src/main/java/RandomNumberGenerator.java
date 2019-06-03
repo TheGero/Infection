@@ -18,8 +18,8 @@ public class RandomNumberGenerator {
     public static int getIntegerFromRange(int start, int end) {
 
         if (start > end) throw new IllegalArgumentException();
-        if (start == 0 && end == 0)
-            return 0;
+        if (start == end)
+            return start;
 
         Random random = new Random();
         int number;
