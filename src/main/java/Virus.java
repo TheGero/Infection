@@ -97,15 +97,22 @@ public class Virus implements IVirus {
      */
     private void mutate() {
         int spreadRange = RandomNumberGenerator.getIntegerFromRange(-2, 2);
-        int spreadChance = RandomNumberGenerator.getIntegerFromRange(-10, 10);
-        int mutationChance = RandomNumberGenerator.getIntegerFromRange(-10, 10);
-        int lethality = RandomNumberGenerator.getIntegerFromRange(-2, 2);
-        int resistanceToTreatment = RandomNumberGenerator.getIntegerFromRange(-10, 10);
+        int spreadChance = RandomNumberGenerator.getIntegerFromRange(-2, 2);
+        int mutationChance = RandomNumberGenerator.getIntegerFromRange(-1, 1);
+        int lethality = RandomNumberGenerator.getIntegerFromRange(-1, 1);
+        int resistanceToTreatment = RandomNumberGenerator.getIntegerFromRange(-1, 1);
 
+        //chance to develop a new symptom
         int r = RandomNumberGenerator.getIntegerFromRange(0, 1);
         if (r == 0) {
             Symptom s = new Symptom(RandomNumberGenerator.getIntegerFromRange(1, 100));
             data.symptoms.add(s);
+        }
+        //chance to remove a symptom
+        r = RandomNumberGenerator.getIntegerFromRange(0, 1);
+        if (r == 0) {
+            if (!data.symptoms.isEmpty())
+                data.symptoms.remove(data.symptoms.size() - 1);
         }
 
         data.spreadRange += spreadRange;

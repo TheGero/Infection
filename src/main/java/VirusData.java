@@ -31,9 +31,9 @@ public class VirusData {
     public VirusData(VirusData source) {
         this.spreadChance = source.spreadChance;
         this.spreadRange = source.spreadRange;
-        this.mutationChance = source.spreadRange;
-        this.lethality = source.spreadRange;
-        this.resistanceToTreatment = source.spreadRange;
+        this.mutationChance = source.mutationChance;
+        this.lethality = source.lethality;
+        this.resistanceToTreatment = source.resistanceToTreatment;
 
         this.symptoms = new ArrayList<>(source.symptoms);
     }
