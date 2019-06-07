@@ -51,7 +51,7 @@ public abstract class AbstractHuman implements IHuman {
         if (visSum >= 100)
             return true;
         else {
-            int r = RandomNumberGenerator.getIntegerFromRange(0, 100);
+            int r = RandomNumberGenerator.getIntegerFromRange(0, 99);
             return r < visSum;
         }
     }

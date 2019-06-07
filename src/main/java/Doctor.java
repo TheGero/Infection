@@ -48,7 +48,7 @@ public class Doctor extends AbstractHuman {
      * @param patient reference to patient
      */
     private void heal(IHuman patient) {
-        int r = RandomNumberGenerator.getIntegerFromRange(0, 100);
+        int r = RandomNumberGenerator.getIntegerFromRange(0, 99);
         int chanceToHeal = 100 - patient.getVirus().getVirusData().resistanceToTreatment;
         if (r < chanceToHeal)
             patient.cure();

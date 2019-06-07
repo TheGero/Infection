@@ -105,7 +105,7 @@ public class Virus implements IVirus {
         //chance to develop a new symptom
         int r = RandomNumberGenerator.getIntegerFromRange(0, 1);
         if (r == 0) {
-            Symptom s = new Symptom(RandomNumberGenerator.getIntegerFromRange(1, 100));
+            Symptom s = new Symptom(RandomNumberGenerator.getIntegerFromRange(1, 99));
             data.symptoms.add(s);
         }
         //chance to remove a symptom
