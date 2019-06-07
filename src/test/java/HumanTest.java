@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
  * @version 1.0
  */
 class HumanTest {
-    @Test
     /**
      *  Testing isDoctor method
      */
+    @Test
     void isDoctorTest() {
         Map map = null; //intentional, shouldn't cause crash
         Human human = new Human(map);

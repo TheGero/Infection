@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 */
 class SymptomTest {
 
-    @Test
     /**
      * Testing constructor and getter.
      */
+    @Test
     void valueTest() {
         Symptom s = new Symptom(5);
         assertEquals(5, s.getVisibility());

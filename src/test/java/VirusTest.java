@@ -8,10 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * @version 1.0
  */
 class VirusTest {
-    @Test
+
     /**
      * Testing if getVirusData returns correct value
      */
+    @Test
     void getVirusData() {
         VirusData d = new VirusData();
         d.spreadChance = 2;
@@ -29,11 +30,10 @@ class VirusTest {
         assertEquals(v.getVirusData().resistanceToTreatment, 8);
         assertEquals(v.getVirusData().symptoms.size(), 0);
     }
-
-    @Test
     /**
      * Testing if getSymptomsVisibility returns correct value
      */
+    @Test
     void getSymptomsVisibility() {
         VirusData d = new VirusData();
         d.symptoms.add(new Symptom(0));
@@ -45,11 +45,10 @@ class VirusTest {
         v = new Virus(null, d);
         assertEquals(v.getSymptomsVisibility(), 130);
     }
-
-    @Test
     /**
      *  Checks if hasMutatedLastStep works
      */
+    @Test
     void hasMutatedLastStep() {
         VirusData d = new VirusData();
         d.mutationChance = 100;

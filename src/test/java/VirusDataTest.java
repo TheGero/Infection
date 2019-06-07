@@ -10,10 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 * @version 1.0
 */
 class VirusDataTest {
-    @Test
+
     /**
      * Testing setting values.
      */
+    @Test
     public void valueTest() {
         VirusData d = new VirusData();
         d.spreadChance = 100;
@@ -28,12 +29,11 @@ class VirusDataTest {
         assertEquals(10, d.lethality);
         assertEquals(20, d.resistanceToTreatment);
     }
-
-    @Test
     /**
      * Test of the copy constructor.
      * It must create a new object with parameters equal to the parameters of the orginal object.
      */
+    @Test
     public void copyConstructorTest() {
         VirusData d = new VirusData();
         d.spreadChance = 100;

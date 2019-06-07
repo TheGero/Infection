@@ -14,29 +14,26 @@ class HumanCreatorTest {
     HumanCreatorTest(){
         hc = new HumanCreator();
     }
-
-    @Test
     /**
      * Testing if createHuman method creates a Human
      */
+    @Test
     void createHuman() {
         IHuman h = hc.createHuman(null);
         assertTrue(h instanceof Human);
     }
-
-    @Test
     /**
      * Testing if createDoctor method creates a Doctor
      */
+    @Test
     void createDoctor() {
         IHuman h = hc.createDoctor(null);
         assertTrue(h instanceof Doctor);
     }
-
-    @Test
     /**
      * Testing if createInfected method creates an infected Human
      */
+    @Test
     void createInfected() {
         IHuman h = hc.createInfected(null, new VirusData());
         assertTrue(h instanceof Human && h.isInfected());

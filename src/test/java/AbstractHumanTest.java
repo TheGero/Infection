@@ -21,22 +21,20 @@ class AbstractHumanTest {
         d = new VirusData();
         map = new Map(10, 0, 0, 0, d);
     }
-
-    @Test
     /**
      * Testing if isAlive returns a correct value.
      */
+    @Test
     void isAlive() {
         human = new Human(map);
         assertTrue(human.isAlive());
         human.kill();
         assertFalse(human.isAlive());
     }
-
-    @Test
     /**
      * Testing if isInfected returns a correct value.
      */
+    @Test
     void isInfected() {
         human = new Human(map);
         v = new Virus(human, d);
@@ -44,11 +42,10 @@ class AbstractHumanTest {
         human.infect(v);
         assertTrue(human.isInfected());
     }
-
-    @Test
     /**
      * Testing if hasVisibleSymptoms returns a correct value.
      */
+    @Test
     void hasVisibleSymptoms() {
         human = new Human(map);
         v = new Virus(human, d);
@@ -63,22 +60,20 @@ class AbstractHumanTest {
         human.infect(v);
         assertTrue(human.hasVisibleSymptoms());
     }
-
-    @Test
     /**
      * Testing if infecting works
      */
+    @Test
     void infect() {
         human = new Human(map);
         v = new Virus(human, d);
         human.infect(v);
         assertTrue(human.isInfected());
     }
-
-    @Test
     /**
      * Testing if curing works
      */
+    @Test
     void cure() {
         human = new Human(map);
         v = new Virus(human, d);
@@ -87,41 +82,37 @@ class AbstractHumanTest {
         human.cure();
         assertFalse(human.isInfected());
     }
-
-    @Test
     /**
      * Testing if killing works
      */
+    @Test
     void kill() {
         human = new Human(map);
         human.kill();
         assertFalse(human.isAlive());
     }
-
-    @Test
     /**
      * Make sure that human is storing the reference to their parent map
      */
+    @Test
     void getParentMap() {
         human = new Human(map);
         assertTrue(map == human.getParentMap());
     }
-
-    @Test
     /**
      * Test of Coordinates getter/setter
      */
+    @Test
     void getSetCoordinates() {
         human = new Human(map);
         human.setCoordinates(new Coordinates(21,37));
         assertEquals(human.getCoordinates().getX(), 21);
         assertEquals(human.getCoordinates().getY(), 37);
     }
-
-    @Test
     /**
      * Test of Virus getter (null must be returned if not infected)
      */
+    @Test
     void getVirus() {
         human = new Human(map);
         v = new Virus(human, d);
@@ -129,11 +120,10 @@ class AbstractHumanTest {
         human.infect(v);
         assertNotEquals(human.getVirus(), null);
     }
-
-    @Test
     /**
      * Testing move method and making sure that human won't go beyond borders of map
      */
+    @Test
     void move() {
         human = new Human(map);
         human.setCoordinates(new Coordinates(1,1));

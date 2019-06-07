@@ -24,59 +24,58 @@ class MapTest {
 
         map = new Map(1, 2000, 200, 100, d);
     }
-
-    @Test
     /**
      * Testing if getHumansInRange returns the correct value
      */
+    @Test
     void getHumansInRange() {
         assertEquals(2300, map.getHumansInRange(new Coordinates(1, 1), 1).size());
     }
 
-    @Test
     /**
      * Testing if getHumansLeft returns the correct value
      */
+    @Test
     void getHumansLeft() {
         assertEquals(2300, map.getHumansLeft());
     }
 
-    @Test
     /**
      * Testing if getDoctorsLeft returns the correct value
      */
+    @Test
     void getDoctorsLeft() {
         assertEquals(200, map.getDoctorsLeft());
     }
 
-    @Test
     /**
      * Testing if getInfectedLeft returns the correct value
      */
+    @Test
     void getInfectedLeft() {
         assertEquals(100, map.getInfectedLeft());
     }
 
-    @Test
     /**
      * Testing if getDeadCount returns the correct value
      */
+    @Test
     void getDeadCount() {
         assertEquals(0, map.getDeadCount());
     }
 
-    @Test
     /**
      * Testing if getMutationCount returns the correct value
      */
+    @Test
     void getMutationCount() {
         assertEquals(0, map.getMutationCount());
     }
 
-    @Test
     /**
      * Testing if getSize returns the size of the map
      */
+    @Test
     void getSize() {
         assertEquals(1, map.getSize());
     }
