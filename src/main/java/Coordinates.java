@@ -1,7 +1,7 @@
 /**
  * Coordinates stores X and Y coordinates of Human and Doctor objects.
  *
- * @author Kacper Leśniański , Patryk Płóciennik
+ * @author Kacper Lesnianski , Patryk Plociennik
  * @version 1.0
  */
 public class Coordinates

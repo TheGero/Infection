@@ -2,9 +2,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+/**
+* Test of Coordinates class
+*
+* @author Kacper Lesnianski, Patryk Plociennik
+* @version 1.0
+*/
 class CoordinatesTest {
 
     @Test
+    /**
+     * Testing getters/setters
+     */
     public void test() {
         Coordinates c = new Coordinates(2, 1);
         assertEquals(2, c.getX());
