@@ -8,20 +8,24 @@ import static org.junit.jupiter.api.Assertions.*;
  * @version 1.0
  */
 class VirusTest {
-
     @Test
-    void update() {
-    }
-
-    @Test
+    /**
+     * Testing if getVirusData returns correct value
+     */
     void getVirusData() {
     }
 
     @Test
+    /**
+     * Testing if getSymptomsVisibility returns correct value
+     */
     void getSymptomsVisibility() {
     }
 
     @Test
+    /**
+     * 
+     */
     void hasMutatedLastStep() {
     }
 }
