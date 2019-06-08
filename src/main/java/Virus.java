@@ -38,7 +38,7 @@ public class Virus implements IVirus {
      * and to kill its host (in this exact order).
      */
     public void update() {
-        int r = RandomNumberGenerator.getIntegerFromRange(0, 100);
+        int r = RandomNumberGenerator.getIntegerFromRange(0, 99);
         if (r < data.mutationChance) {
             mutate();
             mutatedLastStep = true;
@@ -52,7 +52,7 @@ public class Virus implements IVirus {
                 infect(h);
         }
 
-        r = RandomNumberGenerator.getIntegerFromRange(0, 100);
+        r = RandomNumberGenerator.getIntegerFromRange(0, 99);
         if (r < data.lethality)
             host.kill();
 
@@ -131,7 +131,7 @@ public class Virus implements IVirus {
         data.lethality += lethality;
         data.resistanceToTreatment += resistanceToTreatment;
 
-        //we don't want these values to exceed valid ranges TODO:maybe move those checks to virusData getters/setters?
+        //we don't want these values to exceed valid ranges
         if (data.spreadRange > 5) data.spreadRange = 5;
         if (data.spreadRange < 0) data.spreadRange = 0;
         if (data.spreadChance > 100) data.spreadChance = 100;
