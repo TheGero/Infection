@@ -10,11 +10,29 @@ import java.util.List;
  */
 public class VirusData {
 
+    /**
+     * Maximum range of virus spread.
+     */
     public int spreadRange;
+    /**
+     * Chance (in %) of infecting nearby Humans.
+     */
     public int spreadChance;
+    /**
+     * Chance (in %) of mutation.
+     */
     public int mutationChance;
+    /**
+     * Chance (in %) to kill infected Human
+     */
     public int lethality;
+    /**
+     * Resistance of treatment (in %).
+     */
     public int resistanceToTreatment;
+    /**
+     * Array of symptoms of the infection.
+     */
     List<Symptom> symptoms;
 
     /**

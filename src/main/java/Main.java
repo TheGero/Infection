@@ -8,12 +8,33 @@ import java.util.Scanner;
  * @version 1.0
  */
 class Main {
+    /**
+     * Simulation we want to run.
+     */
     private Simulation simulation;
+    /**
+     * Data of the first Virus object to create.
+     */
     private VirusData virusData;
+    /**
+     * Maximum number of steps of the simulation.
+     */
     private int stepLimit;
+    /**
+     * Size of the Map (Map is a square, therefore only one number is needed).
+     */
     private int mapSize;
+    /**
+     * Number of regular Humans to place on the Map.
+     */
     private int humanCount;
+    /**
+     * Number of Doctors to place on the map.
+     */
     private int doctorCount;
+    /**
+     * Number of infected Humans to place on the Map.
+     */
     private int infectedCount;
 
     /**

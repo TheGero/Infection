@@ -6,7 +6,13 @@
  */
 public class Coordinates
 {
+    /**
+     * X coordinate
+     */
     private int X;
+    /**
+     * Y coordinate
+     */
     private int Y;
 
     /**

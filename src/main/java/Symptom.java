@@ -6,6 +6,9 @@
  */
 public class Symptom {
 
+    /**
+     * Visibility of the symptom.
+     */
     private int visibility;
 
     /**

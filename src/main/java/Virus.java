@@ -7,8 +7,18 @@ import java.util.List;
  * @version 1.0
  */
 public class Virus implements IVirus {
+    /**
+     * Reference to Human host of the Virus.
+     */
     private IHuman host;
+    /**
+     * Data of the virus including: spreadChance, spreadRange, mutationChance,
+     * lethality, resistanceToTreatment and an array of Symptoms.
+     */
     private VirusData data;
+    /**
+     * Set to true if Virus mutated last step
+     */
     private boolean mutatedLastStep = false;
 
     /**

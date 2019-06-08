@@ -13,8 +13,17 @@ import static java.lang.Math.sqrt;
 */
 public class Map
 {
+    /**
+     * Size of the Map (Map is a square, therefore only one number is needed).
+     */
     private int size;
+    /**
+     * Array of humans on the map.
+     */
     private List<IHuman> humans;
+    /**
+     * Reference to humanCreator.
+     */
     private HumanCreator hCreator;
 
     /**

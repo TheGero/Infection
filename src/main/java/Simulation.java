@@ -10,10 +10,22 @@ import java.io.IOException;
  * @version 1.0
  */
 public class Simulation {
+    /**
+     * Maximum number of steps of the simulation.
+     */
     private int stepLimit;
+    /**
+     * An integer that counts steps of the simulation.
+     */
     private int stepCounter;
+    /**
+     * Map used by the simulation.
+     */
     private Map map;
 
+    /**
+     * Arrays used to store simulation data from each step.
+     */
     private int[] humanCountArray;
     private int[] doctorCountArray;
     private int[] infectedCountArray;

@@ -48,6 +48,8 @@ public class Human extends AbstractHuman {
         if (isInfected())
             return false;
 
+        int move_speed = 5;
+
         List<IHuman> humansInRange = getParentMap().getHumansInRange(getCoordinates(), 2);
         for (IHuman h : humansInRange) {
             if (h != this && h.hasVisibleSymptoms()) {
@@ -60,24 +62,24 @@ public class Human extends AbstractHuman {
                     if (c.getX() >= 0) {
                         //MOVE DOWN OR LEFT
                         int dir = RandomNumberGenerator.getIntegerFromRange(2, 3);
-                        move(dir, 2);
+                        move(dir, move_speed);
                     } else {
                         int dir = RandomNumberGenerator.getIntegerFromRange(0, 1);
                         //MOVE DOWN OR RIGHT
-                        if (dir == 0) move(2, 2);
-                        else move(4, 2);
+                        if (dir == 0) move(2, move_speed);
+                        else move(4, move_speed);
                     }
                 } else {
                     if (c.getX() >= 0) {
                         //MOVE UP OR LEFT
                         int dir = RandomNumberGenerator.getIntegerFromRange(0, 1);
-                        if (dir == 0) move(1, 2);
-                        else move(3, 2);
+                        if (dir == 0) move(1, move_speed);
+                        else move(3, move_speed);
                     } else {
                         //MOVE UP OR RIGHT
                         int dir = RandomNumberGenerator.getIntegerFromRange(0, 1);
-                        if (dir == 0) move(1, 2);
-                        else move(4, 2);
+                        if (dir == 0) move(1, move_speed);
+                        else move(4, move_speed);
                     }
                 }
 

@@ -5,9 +5,22 @@
  * @version 1.0
  */
 public abstract class AbstractHuman implements IHuman {
+    /**
+     * A binary value that represents the state of the Human - dead of alive.
+     * Update() method won't perform certain actions if Human is dead.
+     */
     private boolean alive;
+    /**
+     * Reference to Virus that infected Human. If Human is not infected this field is set to null.
+     */
     private IVirus virus;
+    /**
+     * Reference to map Human is stored in.
+     */
     private Map parentMap;
+    /**
+     * Coordinates are used to determine location of Human on the Map.
+     */
     private Coordinates coordinates;
 
     /**
@@ -119,7 +132,7 @@ public abstract class AbstractHuman implements IHuman {
 
     /**
      * Move in specified direction.
-     * @param direction Direction of move.
+     * @param direction Direction of move (1-UP, 2-DOWN, 3-LEFT, 4-RIGHT).
      * @param range Range of move.
      */
     public void move(int direction, int range) {
