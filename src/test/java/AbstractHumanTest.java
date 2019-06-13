@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -97,7 +98,7 @@ class AbstractHumanTest {
     @Test
     void getParentMap() {
         human = new Human(map);
-        assertTrue(map == human.getParentMap());
+        assertSame(map, human.getParentMap());
     }
     /**
      * Test of Coordinates getter/setter
@@ -116,7 +117,7 @@ class AbstractHumanTest {
     void getVirus() {
         human = new Human(map);
         v = new Virus(human, d);
-        assertEquals(human.getVirus(),null);
+        assertNull(human.getVirus());
         human.infect(v);
         assertNotEquals(human.getVirus(), null);
     }

@@ -31,7 +31,7 @@ public class HumanCreator {
      * Creates new Human object and infects it with a Virus.
      *
      * @param parentMap Reference to Map storing the Human.
-     * @param vData     Reference to VirusData class.
+     * @param vData     Reference to VirusData class that contains data of Virus to create.
      * @return new Human object infected with new Virus object.
      */
     public IHuman createInfected(Map parentMap, VirusData vData) {

@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * Tests of Human class
@@ -14,9 +14,8 @@ class HumanTest {
      */
     @Test
     void isDoctorTest() {
-        Map map = null; //intentional, shouldn't cause crash
-        Human human = new Human(map);
+        //intentional null
+        Human human = new Human(null);
         assertFalse(human.isDoctor());
     }
 }
-//TODO Flee method test

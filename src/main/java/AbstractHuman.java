@@ -53,8 +53,12 @@ public abstract class AbstractHuman implements IHuman {
     }
 
     /**
-     *
-     * @return true if Human has visible symptoms of infection.
+     * This method determines whether symptoms of infection can be spotted by nearby Humans.
+     * This is done by generating a random number from 0 to 99
+     * and comparing it to the sum of visibility parameter of all Symptoms of Virus.
+     * If the random number is smaller, return true.
+     * If it is not - return false;
+     * @return true if Human has visible symptoms of infection. False if not.
      */
     @Override
     public boolean hasVisibleSymptoms() {
@@ -79,7 +83,7 @@ public abstract class AbstractHuman implements IHuman {
     }
 
     /**
-     *  Cure from infection.
+     *  Cure from infection. Sets Virus field to null.
      */
     @Override
     public void cure() {

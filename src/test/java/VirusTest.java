@@ -51,8 +51,11 @@ class VirusTest {
     @Test
     void hasMutatedLastStep() {
         VirusData d = new VirusData();
+        Map m = new Map(1, 0, 0, 0, d);
+        Human h = new Human(m);
+
         d.mutationChance = 100;
-        Virus v = new Virus(null,d);
+        Virus v = new Virus(h, d);
         assertFalse(v.hasMutatedLastStep());
         v.update();
         assertTrue(v.hasMutatedLastStep());

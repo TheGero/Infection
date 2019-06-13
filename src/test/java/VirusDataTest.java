@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 /**
 * Tests of class VirusData
@@ -31,7 +31,7 @@ class VirusDataTest {
     }
     /**
      * Test of the copy constructor.
-     * It must create a new object with parameters equal to the parameters of the orginal object.
+     * It must create a new object with parameters equal to the parameters of the original object.
      */
     @Test
     public void copyConstructorTest() {
@@ -50,6 +50,6 @@ class VirusDataTest {
         assertEquals(10, d2.lethality);
         assertEquals(20, d2.resistanceToTreatment);
 
-        assertTrue(d2 != d);
+        assertNotSame(d2, d);
     }
 }

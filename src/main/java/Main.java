@@ -86,11 +86,11 @@ class Main {
     private void getDataFromUser(){
         virusData = new VirusData();
 
-        System.out.println("<welcome user>");
+        System.out.println("Infection v 1.0");
         System.out.println("Please input the simulation data. (type 'r' to set random value instead)");
         mapSize = getInt("map size <integer> [0, 20000]: ", 1, 20000);
         stepLimit = getInt("step limit <integer>: [1,2000000]: ", 1, 200000);
-        humanCount = getInt("Population <integer> [1,2000]: ", 1, 2000);
+        humanCount = getInt("Population <integer> [1,10000]: ", 1, 10000);
         doctorCount = getInt("Number of Doctors <integer> [0,2000]: ", 1, 2000);
         infectedCount = getInt("Number of Infected humans <integer>  [1,100]: ", 1,100);
         virusData.spreadChance = getInt("Virus's spread chance <integer> [0,100]: ", 0, 100);

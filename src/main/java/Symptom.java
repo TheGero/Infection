@@ -12,7 +12,7 @@ public class Symptom {
     private int visibility;
 
     /**
-     * Create Symptom with set visibility.
+     * Create Symptom and set visibility.
      *
      * @param visibility visibility of Symptom.
      */

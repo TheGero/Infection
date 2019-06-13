@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Tests of Doctor class
  *
@@ -13,9 +13,8 @@ class DoctorTest {
      */
     @Test
     void isDoctor() {
-        Map map = null; //intentional, shouldn't cause crash
-        Doctor doctor = new Doctor(map);
+        //intentional null
+        Doctor doctor = new Doctor(null);
         assertTrue(doctor.isDoctor());
     }
 }
-//TODO Heal method test

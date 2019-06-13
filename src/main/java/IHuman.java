@@ -7,7 +7,7 @@
 public interface IHuman
 {
     /**
-     * Update Human/Doctor.
+     * Update Human/Doctor. Called every step of the simulation.
      */
     void update();
 
@@ -41,12 +41,12 @@ public interface IHuman
     void infect(IVirus virus);
 
     /**
-     * Cure from infection.
+     * Cure from infection. (Set Virus to null)
      */
     void cure();
 
     /**
-     * Kill Human/Doctor.
+     * Kill Human/Doctor. (Set alive to false)
      */
     void kill();
     /**

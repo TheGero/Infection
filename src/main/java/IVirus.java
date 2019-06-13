@@ -11,7 +11,7 @@ public interface IVirus {
     void update();
 
     /**
-     * @return SymptomsVisibility value.
+     * @return Sum of visibility parameters of Virus's Symptoms.
      */
     int getSymptomsVisibility();
 
@@ -22,7 +22,7 @@ public interface IVirus {
 
     /**
      *
-     * @return true if Virus has mutated.
+     * @return true if Virus has mutated last step.
      */
     boolean hasMutatedLastStep();
 }

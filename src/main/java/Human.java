@@ -42,10 +42,16 @@ public class Human extends AbstractHuman {
     /**
      * Check if there are any infected with visible symptoms nearby
      * and try to get away from them.
+     * There is also a 50% chance that Human won't try to run away from the infected.
      * @return true if spotted an infected Human and ran away.
      */
     private boolean flee() {
         if (isInfected())
+            return false;
+
+        //Chance to ignore the danger and not run away
+        int r = RandomNumberGenerator.getIntegerFromRange(0, 1);
+        if (r == 0)
             return false;
 
         int move_speed = 5;

@@ -41,7 +41,6 @@ public class Virus implements IVirus {
         int r = RandomNumberGenerator.getIntegerFromRange(0, 99);
         if (r < data.mutationChance) {
             mutate();
-            mutatedLastStep = true;
         } else {
             mutatedLastStep = false;
         }
@@ -102,7 +101,7 @@ public class Virus implements IVirus {
     /**
      * Virus mutates.
      * Random Virus data is generated and added to existing data.
-     * There is also a chance to develop new Symptoms.
+     * There is also a chance to develop new Symptoms or remove existing ones.
      * Mutations can affect the Virus both positively and negatively.
      */
     private void mutate() {
@@ -115,7 +114,7 @@ public class Virus implements IVirus {
         //chance to develop a new symptom
         int r = RandomNumberGenerator.getIntegerFromRange(0, 1);
         if (r == 0) {
-            Symptom s = new Symptom(RandomNumberGenerator.getIntegerFromRange(1, 99));
+            Symptom s = new Symptom(RandomNumberGenerator.getIntegerFromRange(1, 10));
             data.symptoms.add(s);
         }
         //chance to remove a symptom
@@ -142,5 +141,7 @@ public class Virus implements IVirus {
         if (data.lethality > 100) data.lethality = 100;
         if (data.resistanceToTreatment < 0) data.resistanceToTreatment = 0;
         if (data.resistanceToTreatment > 100) data.resistanceToTreatment = 100;
+
+        mutatedLastStep = true;
     }
 }

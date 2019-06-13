@@ -45,6 +45,7 @@ public class Doctor extends AbstractHuman {
 
     /**
      * Attempt to cure patient from infection.
+     * Chance to successfully heal the patient is (100 - virus.resistanceToTreatment)%
      * @param patient reference to patient
      */
     private void heal(IHuman patient) {
