@@ -4,7 +4,6 @@ import java.util.List;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-
 /**
 * Map creates, stores and updates Humans.
 *

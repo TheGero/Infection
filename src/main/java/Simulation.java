@@ -67,7 +67,31 @@ public class Simulation {
             logStep();
         }
 
-        writeResultsToFile();
+        System.out.println("\nResults:");
+        if (stepCounter == stepLimit) {
+            System.out.println("Max number of steps was reached." +
+                    "\nHumans alive: " + humanCountArray[stepCounter - 1] +
+                    "\nHumans dead: " + deadCountArray[stepCounter - 1] +
+                    "\nHumans still infected: " + infectedCountArray[stepLimit - 1]
+            );
+        } else if (map.getInfectedLeft() <= 0) {
+            System.out.println("\nThe infection is over, there is no infected humans left." +
+                    "\nHumans alive: " + humanCountArray[stepCounter - 1] +
+                    "\nHumans dead: " + deadCountArray[stepCounter - 1]
+            );
+        } else {
+            System.out.println("The infection killed the entire population." +
+                    "\nHumans dead:" + deadCountArray[stepCounter - 1]
+            );
+        }
+        System.out.println("\nCheck results.csv for details.");
+
+        try {
+            writeResultsToFile();
+        } catch (Exception e) {
+            System.out.println("An error occurred while writing results to file: " + e.getMessage());
+        }
+
     }
 
     /**

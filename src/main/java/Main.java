@@ -91,7 +91,7 @@ class Main {
         mapSize = getInt("map size <integer> [0, 20000]: ", 1, 20000);
         stepLimit = getInt("step limit <integer>: [1,2000000]: ", 1, 200000);
         humanCount = getInt("Population <integer> [1,10000]: ", 1, 10000);
-        doctorCount = getInt("Number of Doctors <integer> [0,2000]: ", 1, 2000);
+        doctorCount = getInt("Number of Doctors <integer> [0,2000]: ", 0, 2000);
         infectedCount = getInt("Number of Infected humans <integer>  [1,100]: ", 1,100);
         virusData.spreadChance = getInt("Virus's spread chance <integer> [0,100]: ", 0, 100);
         virusData.spreadRange = getInt("Virus's spread range <integer> [0,10]: ", 0, 10);
